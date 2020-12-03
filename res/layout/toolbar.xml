@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    tools:ignore="MergeRootFrame">
+    <ImageView
+        android:id="@+id/toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scaleType="fitXY"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolBarStyle">
+        <ImageView
+            android:layout_width="@dimen/toolbar_icon_dimension"
+            android:layout_height="@dimen/toolbar_icon_dimension"
+            android:background="@drawable/tgp_logo3"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/toolbar_text"
+            style="@style/ToolbarTitleTextStyle"/>
+    </androidx.appcompat.widget.Toolbar>
+</FrameLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PreambleActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTintMode="screen"
+            android:foregroundTintMode="screen"
+            android:background="@drawable/logo_background"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/preamble_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_preamble"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="italic"/>
+        <TextView
+            android:id="@+id/preamble"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/preamble_title"
+            android:text="@string/preamble"
+            android:textSize="18sp"
+            android:layout_margin="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:lineSpacingExtra="20dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="normal|italic"
+            android:layout_marginTop="10dp"
+            android:textAlignment="viewStart"/>
+    </RelativeLayout>
+
+</LinearLayout>
