@@ -1,25 +1,68 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:4.1.1"
+plugins {
+    id 'com.android.application'
+}
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.bacter.tgp"
+        minSdkVersion 21
+        //noinspection OldTargetApi
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions{
+        ignore 'GoogleAppIndexingWarning','ContentDescription', 'HardcodedText','MissingConstraints','RtlSymmetry','TextFields','TooDeepLayout','Autofill','ButtonStyle','AllowBackup'
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-}
+dependencies {
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.biometric:biometric:1.1.0-rc01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // JETBRAIN'S SHIT
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // GOOGLE'S SHIT
+    implementation 'com.google.android.material:material:1.2.1'
+
+    // PASSWORD AUTH
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    // DOUBLE LIFT
+    implementation "com.github.skydoves:doublelift:1.0.3"
+    implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+
+    // ABOUT
+    //noinspection GradleDynamicVersion
+    implementation 'com.github.jrvansuita:MaterialAbout:+'
+    // TEXTVIEW MORE
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    // JUSTIFIED TEXTVIEW
+    implementation 'com.github.bluejamesbond:textjustify-android:2.1.6'
 }
